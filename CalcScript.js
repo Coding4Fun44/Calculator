@@ -1,149 +1,420 @@
-let moreNumbers = true;
-let numbers = [];
-let total = 0;
-let sign = "";
-let i = 0;
+let n = [];
+let d = [];
+let total1 = '0';
+let total2 = '0';
+let total3 = 0;
+let sign = '';
+let digits = '';
 
-function output0() {
-    if (moreNumbers === true) {
-    document.getElementById("output").innerHTML = "0";
-    numbers.push(0);
+function output(a) {
+    if (total1.substring(total1.length - 1, total1.length) === '+' || total1.substring(total1.length - 1, total1.length) === '–' || total1.substring(total1.length - 1, total1.length) === 'x' || total1.substring(total1.length - 1, total1.length) === '÷') {
+        d = [];
     }
-}
-
-function output1() {
-    if (moreNumbers ===  true) {
-    document.getElementById("output").innerHTML = "1";
-    numbers.push(1);
+    if (total1 === '0' || total3 != 0) {                 
+        total1 = a;
+        total2 = a;   
+        document.getElementById("output").innerHTML = total1;
+        total3 = 0;
     }
-}
-
-function output2() {
-    if (moreNumbers === true) {
-    document.getElementById("output").innerHTML = "2";
-    numbers.push(2);
+    else if ((total1.substring(total1.length-2, total1.length - 1) === '+' || total1.substring(total1.length-2, total1.length - 1) === '–' || total1.substring(total1.length-2, total1.length - 1) === 'x' || total1.substring(total1.length-2, total1.length - 1) === '÷' || total1.substring(total1.length-2, total1.length - 1) === '^' || total1.substring(total1.length-2, total1.length - 1) === '(') && total1.substring(total1.length-1, total1.length) === '0'){
+        total1 = total1.substring(0,total1.length-1) + a;
+        total2 = total2.substring(0,total2.length-1) + a;
+        document.getElementById("output").innerHTML = total1;
     }
-}
-
-function output3() {
-    if (moreNumbers === true) {
-    document.getElementById("output").innerHTML = "3";
-    numbers.push(3);
-    }
-}
-
-function output4() {
-    if (moreNumbers === true) {
-    document.getElementById("output").innerHTML = "4";
-    numbers.push(4);
-    }
-}
-
-function output5() {
-    if (moreNumbers === true) {
-    document.getElementById("output").innerHTML = "5";
-    numbers.push(5);
-    }
-}
-
-function output6() {
-    if (moreNumbers === true) {
-    document.getElementById("output").innerHTML = "6";
-    numbers.push(6);
-    }
-}
-
-function output7() {
-    if (moreNumbers === true) {
-    document.getElementById("output").innerHTML = "7";
-    numbers.push(7);
-    }
-}
-
-function output8() {
-    if (moreNumbers === true) {
-    document.getElementById("output").innerHTML = "8";
-    numbers.push(8);
-    }
-}
-
-function output9() {
-    if (moreNumbers === true) {
-    document.getElementById("output").innerHTML = "9";
-    numbers.push(9);
-    }
+    else {
+        total1 = total1 + a; 
+        total2 = total2 + a;     
+        document.getElementById("output").innerHTML = total1;
+        }
+        n = [];
 }
 
 function outputplus() {
-    if (moreNumbers === true) {
-    document.getElementById("output").innerHTML = "+";
-    sign = "+";
+if (total1.substring(total1.length-1,total1.length) != '.' && total1.substring(total1.length-1,total1.length) != '-' && total1.substring(total1.length-1, total1.length) != '^') {
+    if ((total1.substring(total1.length-1,total1.length) === '+') || (total1.substring(total1.length-1,total1.length) === '–') || (total1.substring(total1.length-1,total1.length) === 'x') || (total1.substring(total1.length-1,total1.length) === '÷')) {
+        total1 = total1.substring(0, total1.length-1) + '+';
+        total2 = total2.substring(0, total2.length-1) + '+';   
+        document.getElementById("output").innerHTML = total1;
     }
+    else if ((total1.substring(total1.length-1,total1.length) === ')')) {
+        total1 = total1 + '+';
+        total2 = total2.substring(0, total2.length-1) + '+';   
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if ((total2.substring(total2.length-8,total2.length) === 'Math.PI*')) {
+        total1 = total1 + '+';
+        total2 = total2.substring(0, total2.length-1) + '+';   
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if(total2.substring(total2.length-9, total2.length) === '*Math.PI*') {
+        total1 = total1 + '+';
+        total2 = total2.substring(0, total2.length-1) + '+';   
+        document.getElementById("output").innerHTML = total1;
+        }
+else { 
+    total1 = total1 + '+'; 
+    total2 = total2 + '+'; 
+    document.getElementById("output").innerHTML = total1;
+}
+}
+total3 = 0;
 }
 
 function outputminus() {
-    if (moreNumbers === true) {
-    document.getElementById("output").innerHTML = "-";
-    sign = "-";
+if (total1.substring(total1.length-1,total1.length) != '.' && total1.substring(total1.length-1,total1.length) != '-' && total1.substring(total1.length-1, total1.length) != '^') {
+    if ((total1.substring(total1.length-1,total1.length) === '+') || (total1.substring(total1.length-1,total1.length) === '–') || (total1.substring(total1.length-1,total1.length) === 'x') || (total1.substring(total1.length-1,total1.length) === '÷')){
+        total1 = total1.substring(0, total1.length-1) + '–';
+        total2 = total2.substring(0, total2.length-1) + '-';   
+        document.getElementById("output").innerHTML = total1;
     }
+    else if ((total1.substring(total1.length-1,total1.length) === ')')) {
+        total1 = total1 + '–';
+        total2 = total2.substring(0, total2.length-1) + '-';   
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if ((total2.substring(total2.length-8,total2.length) === 'Math.PI*')) {
+        total1 = total1 + '–';
+        total2 = total2.substring(0, total2.length-1) + '-';   
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if(total2.substring(total2.length-9, total2.length) === '*Math.PI*') {
+        total1 = total1 + '–';
+        total2 = total2.substring(0, total2.length-1) + '-';   
+        document.getElementById("output").innerHTML = total1;
+        }
+else { 
+    total1 = total1 + '–'; 
+    total2 = total2 + '-'; 
+    document.getElementById("output").innerHTML = total1;
 }
+}
+total3 = 0;
+    }
 
 function outputmult() {
-    if (moreNumbers === true) {
-    document.getElementById("output").innerHTML = "×";
-    sign = "×";
+if (total1.substring(total1.length-1,total1.length) != '.' && total1.substring(total1.length-1,total1.length) != '-' && total1.substring(total1.length-1, total1.length) != '^') {
+    if ((total1.substring(total1.length-1,total1.length) === '+') || (total1.substring(total1.length-1,total1.length) === '–') || (total1.substring(total1.length-1,total1.length) === 'x') || (total1.substring(total1.length-1,total1.length) === '÷')){
+        total1 = total1.substring(0, total1.length-1) + 'x';
+        total2 = total2.substring(0, total2.length-1) + '*';   
+        document.getElementById("output").innerHTML = total1;
     }
+    else if ((total1.substring(total1.length-1,total1.length) === ')')) {
+        total1 = total1 + 'x';
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if ((total2.substring(total2.length-8,total2.length) === 'Math.PI*')) {
+        total1 = total1 + 'x';   
+        total2 = total2.substring(0, total2.length-1) + '*';
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if(total2.substring(total2.length-9, total2.length) === '*Math.PI*') {
+        total1 = total1 + 'x';
+        total2 = total2.substring(0, total2.length-1) + '*';   
+        document.getElementById("output").innerHTML = total1;
+        }
+else { 
+    total1 = total1 + 'x';
+    total2 = total2 + '*'; 
+    document.getElementById("output").innerHTML = total1;
 }
+}
+total3 = 0;
+    }
 
 function outputdiv() {
-    if (moreNumbers === true) {
-    document.getElementById("output").innerHTML = "÷";
-    sign = "÷";
+if (total1.substring(total1.length-1,total1.length) != '.' && total1.substring(total1.length-1,total1.length) != '-' && total1.substring(total1.length-1, total1.length) != '^') {
+    if ((total1.substring(total1.length-1,total1.length) === '+') || (total1.substring(total1.length-1,total1.length) === '–') || (total1.substring(total1.length-1,total1.length) === 'x') || (total1.substring(total1.length-1,total1.length) === '÷')){
+        total1 = total1.substring(0, total1.length-1) + '÷';
+        total2 = total2.substring(0, total2.length-1) + '/';   
+        document.getElementById("output").innerHTML = total1;
     }
+    else if ((total1.substring(total1.length-1,total1.length) === ')')) {
+        total1 = total1 + '÷';
+        total2 = total2.substring(0, total2.length-1) + '/';   
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if ((total2.substring(total2.length-8,total2.length) === 'Math.PI*')) {
+        total1 = total1 + '÷';
+        total2 = total2.substring(0, total2.length-1) + '/';   
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if(total2.substring(total2.length-9, total2.length) === '*Math.PI*') {
+        total1 = total1 + '÷';
+        total2 = total2.substring(0, total2.length-1) + '/';   
+        document.getElementById("output").innerHTML = total1;
+        }
+        else {
+            total1 = total1 + '÷'; 
+            total2 = total2 + '/'; 
+            document.getElementById("output").innerHTML = total1;
+        }
 }
+total3 = 0;
+    }
 
 function outputequals() {
-    moreNumbers = false;
-    document.getElementById("output").innerHTML = total.toString();
+    if (total1.substring(total1.length-1, total1.length) === ')') {
+    total2 = total2.substring(0, total2.length-1);
+    }
+    if (total2.substring(total2.length-8, total2.length) === 'Math.PI*') {
+        total2 = total2.substring(0, total2.length-1);
+        }
+    total3 = eval(total2);
+    document.getElementById("output").innerHTML = total3.toString();
+    if ((total3.toString()).includes('.')) {
+        d.push('d');
+    }
+    total1 = total3.toString();
+    total2 = total3.toString();
+    n = [];
 }
 
-while (moreNumbers === true) {
-    while (i<numbers.length) {
-    if (sign === "×" && numbers.length >= 2) {
-        if (i === 0) {
-        total = numbers[i] * numbers[i+1];
-        }
-        else {
-        total = total * numbers[i+1];
-        }
-        i = i + 2;
-    }
-    else if (sign === "÷" && numbers.length >= 2) {
-        if (i === 0) {
-        total = numbers[i] / numbers[i+1];
-        }
-        else {
-        total = total / numbers[i+1];
-        }
-        i = i + 2;
-    }
-    else if (sign === "+" && numbers.length >= 2) {
-        if (i === 0) {
-        total = numbers[i]+ numbers[i+1];
-        }
-        else {
-        total = total + numbers[i+1];
-        }
-        i = i + 2;
+function outputclear() {
+    total1 = '0';
+    total2 = '0';
+    total3 = 0;
+    n = [];
+    d = [];
+    document.getElementById("output").innerHTML = total1;
 }
-    else if (sign === "-" && numbers.length >= 2) {
-        if (i === 0) {
-        total = numbers[i] - numbers[i+1];
-        }
-        else {
-        total = total - numbers[i+1];
-        }
-        i = i + 2;
+
+function outputbackspace() {
+if (total3 != 0) {
+    total1 = '0';
+    total2 = '0';
+    total3 = 0;
+    n = [];
+    d = [];
+    document.getElementById("output").innerHTML = total1;
+}
+else if (total1 != '0' && total1.length > 1) {
+    if (total1.substring(total1.length - 1, total1.length) === '^') {
+        total1 = total1.substring(0, total1.length - 1);
+        total2 = total2.substring(0, total2.length - 2);
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if (total1.substring(total1.length - 1, total1.length) === ')') {
+        total1 = total1.substring(0, total1.length - 1);
+        total2 = total2.substring(0, total2.length - 2);
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if (total1.substring(total1.length - 1, total1.length) === '(') {
+        total1 = total1.substring(0, total1.length - 1);
+        total2 = total2.substring(0, total2.length - 2);
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if (total2.substring(total2.length - 9, total2.length) === '*Math.PI*') {
+        total1 = total1.substring(0, total1.length - 1);
+        total2 = total2.substring(0, total2.length - 9);
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if (total2.substring(total2.length - 8, total2.length) === 'Math.PI*') {
+        total1 = total1.substring(0, total1.length - 1);
+        total2 = total2.substring(0, total2.length - 8);
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if (total2.substring(total2.length - 7, total2.length) === 'Math.PI') {
+        total1 = total1.substring(0, total1.length - 1);
+        total2 = total2.substring(0, total2.length - 7);
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if (total1.substring(total1.length - 1, total1.length) === '.') {
+        d = [];
+        total1 = total1.substring(0, total1.length-1);
+        total2 = total2.substring(0, total2.length-1);
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if (total2.substring(total2.length - 2, total2.length) === '*-') {
+        n = [];
+        total1 = total1.substring(0, total1.length-1);
+        total2 = total2.substring(0, total2.length-2);
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if (total2.substring(total2.length - 1, total2.length) === '-') {
+        n = [];
+        total1 = total1.substring(0, total1.length-1);
+        total2 = total2.substring(0, total2.length-1);
+        document.getElementById("output").innerHTML = total1;
+    }
+    else {
+    total1 = total1.substring(0, total1.length-1);
+    total2 = total2.substring(0, total2.length-1);
+    document.getElementById("output").innerHTML = total1;
+    }
+    }
+    else if (total1.length === 1 && total1.substring(0, 1) != 0) {
+    total1 = '0';
+    total2 = '0';
+    document.getElementById("output").innerHTML = total1;
+    }
+    total3 = 0;
+}
+
+function outputdecimal() {
+    if (d[0] != 'd' ) {
+    if (total1.substring(total1.length-1,total1.length) != '.' && total1.substring(total1.length-1,total1.length) != 'π') {
+    total1 = total1 + '.'; 
+    total2 = total2 + '.'; 
+    d.push('d');
+    document.getElementById("output").innerHTML = total1;
+    total3 = 0;
     }
 }
+else if (total1.substring(total1.length - 1, total1.length) === '+' || total1.substring(total1.length - 1, total1.length) === '–' || total1.substring(total1.length - 1, total1.length) === 'x' || total1.substring(total1.length - 1, total1.length) === '÷' || total1.substring(total1.length - 1, total1.length) === '^' || total1.substring(total1.length - 1, total1.length) === '(' || total1.substring(total1.length - 1, total1.length) === ')') {
+    total1 = total1 + '.'; 
+    total2 = total2 + '.'; 
+    d.push('d');
+    document.getElementById("output").innerHTML = total1;
+    total3 = 0;
+}
+}
+
+function outputnegative() {
+if (total1.substring(total1.length-1, total1.length) != '.') {
+    if (total1 === '0') {
+        total1 = '-';
+        total2 = '-';
+        n.push('n')
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if (n[0] === 'n') {
+        if (total1 === '-'){
+            total1 = '0';
+            total2 = '0';
+            document.getElementById("output").innerHTML = total1;
+            n.pop();
+        }
+        else {
+            if (total2.substring(total2.length - 2, total2.length) === '*-') {
+            total1 = total1.substring(0, total1.length-1);
+            total2 = total2.substring(0, total2.length-2);
+            document.getElementById("output").innerHTML = total1;
+            n.pop();
+            }
+            else {
+                total1 = total1.substring(0, total1.length-1);
+                total2 = total2.substring(0, total2.length-1);
+                document.getElementById("output").innerHTML = total1;
+                n.pop();
+            }
+        }
+    }
+    else if ((total1.substring(total1.length-1, total1.length) === '0') || (total1.substring(total1.length-1, total1.length) === '1') || (total1.substring(total1.length-1, total1.length) === '2') || (total1.substring(total1.length-1, total1.length) === '3') || (total1.substring(total1.length-1, total1.length) === '4') || (total1.substring(total1.length-1, total1.length) === '5') || (total1.substring(total1.length-1, total1.length) === '6') || (total1.substring(total1.length-1, total1.length) === '7') || (total1.substring(total1.length-1, total1.length) === '8') || (total1.substring(total1.length-1, total1.length) === '9')) {
+        n.push('n')
+        total1 = total1 + '-';
+        total2 = total2 + '*-'; 
+        document.getElementById("output").innerHTML = total1;
+    }
+    else {
+        n.push('n')
+        total1 = total1 + '-';
+        total2 = total2 + '-'; 
+        document.getElementById("output").innerHTML = total1;
+    } 
+}
+total3 = 0;
+}
+
+function outputexponent() {
+    if (total1.substring(total1.length-1, total1.length) != '^' && total1.substring(total1.length-1, total1.length) != '.' && total1.substring(total1.length-1, total1.length) != '-' && total1.substring(total1.length-1, total1.length) != '(' && total1.substring(total1.length - 1, total1.length) === '+' && total1.substring(total1.length - 1, total1.length) === '–' && total1.substring(total1.length - 1, total1.length) === 'x' && total1.substring(total1.length - 1, total1.length) === '÷') {
+        if (total1.substring(total1.length-1, total1.length) === ')') {
+            total1 = total1 + '^';
+            total2 = total2.substring(0, total1.length-1) + '**';
+            document.getElementById("output").innerHTML = total1;
+        }
+        else if (total2.substring(total2.length-8, total2.length) === 'Math.PI*') {
+        total1 = total1 + '^';
+        total2 = total2.substring(0, total2.length-1) + '**';   
+        document.getElementById("output").innerHTML = total1;
+        }
+        else if (total2.substring(total2.length-9, total2.length) === '*Math.PI*') {
+        total1 = total1 + '^';
+        total2 = total2.substring(0, total2.length-1) + '**';   
+        document.getElementById("output").innerHTML = total1;
+        }
+        else {
+        total1 = total1 + '^';
+        total2 = total2 + '**';
+        document.getElementById("output").innerHTML = total1;
+        }
+        n = [];
+    }
+    total3 = 0;
+}
+
+function outputpi() {
+if (total1.substring(total1.length - 1, total1.length) != '.') {
+    if (total1 === '0') {                 
+        total1 = 'π';
+        total2 = 'Math.PI*';   
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if ((total1.substring(total1.length-1, total1.length) === '0') || (total1.substring(total1.length-1, total1.length) === '1') || (total1.substring(total1.length-1, total1.length) === '2') || (total1.substring(total1.length-1, total1.length) === '3') || (total1.substring(total1.length-1, total1.length) === '4') || (total1.substring(total1.length-1, total1.length) === '5') || (total1.substring(total1.length-1, total1.length) === '6') || (total1.substring(total1.length-1, total1.length) === '7') || (total1.substring(total1.length-1, total1.length) === '8') || (total1.substring(total1.length-1, total1.length) === '9')) {
+        total1 = total1 + 'π';
+        total2 = total2 + '*Math.PI*';   
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if ((total1.substring(total1.length-1, total1.length) === ')') || (total1.substring(total1.length-1, total1.length) === '+') || (total1.substring(total1.length-1, total1.length) === '-') || (total1.substring(total1.length-1, total1.length) === 'x') || (total1.substring(total1.length-1, total1.length) === '÷')) {
+        total1 = total1 + 'π';
+        total2 = total2 + 'Math.PI*';   
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if ((total2.substring(total2.length-8, total1.length) === 'Math.PI*') || (total2.substring(total2.length-9, total1.length) === '*Math.PI*')) {
+        total1 = total1 + 'π';
+        total2 = total2.substring(0, total2.length - 1) + '*Math.PI*';   
+        document.getElementById("output").innerHTML = total1;
+    }
+    else {
+        total1 = total1 + 'π'; 
+        total2 = total2 + 'Math.PI*';  
+        document.getElementById("output").innerHTML = total1;
+        }
+        n = [];
+    }
+    total3 = 0;
+}
+
+function outputleftp() {
+    if (total1 === '0') {
+        total1 = '(';
+        total2 = '(';
+        document.getElementById("output").innerHTML = total1;
+    }
+    else if (total1.substring(total1.length-1, total1.length) != '.') {
+        if ((total1.substring(total1.length-1, total1.length) === '0') || (total1.substring(total1.length-1, total1.length) === '1') || (total1.substring(total1.length-1, total1.length) === '2') || (total1.substring(total1.length-1, total1.length) === '3') || (total1.substring(total1.length-1, total1.length) === '4') || (total1.substring(total1.length-1, total1.length) === '5') || (total1.substring(total1.length-1, total1.length) === '6') || (total1.substring(total1.length-1, total1.length) === '7') || (total1.substring(total1.length-1, total1.length) === '8') || (total1.substring(total1.length-1, total1.length) === '9')) {
+        total1 = total1 + '(';
+        total2 = total2 + '*(';
+        document.getElementById("output").innerHTML = total1;
+        }
+        else {
+        total1 = total1 + '(';
+        total2 = total2 + '(';
+        document.getElementById("output").innerHTML = total1;
+        }
+    }
+    n = [];
+    total3 = 0;
+}
+
+function outputrightp() {
+if (total1 != '0') {
+    if(total1.substring(total1.length-1, total1.length) != '.' && total1.substring(total1.length-1, total1.length) != '^') {
+        total1 = total1 + ')';
+        total2 = total2 + ')*';
+        document.getElementById("output").innerHTML = total1;
+    }
+    n = [];
+}
+total3 = 0;
+}
+
+function outputpercent() {
+    if (total1.substring(total1.length-1, total1.length) === ')') {
+        total2 = total2.substring(0, total2.length-1);
+    }
+    total3 = eval(total2);
+    total3 = total3 / 100;
+    total2 = total3.toString();
+    total1 = total2;
+    document.getElementById("output").innerHTML = total1;
 }
