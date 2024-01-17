@@ -1,0 +1,367 @@
+body {
+    background: #ccc;
+    width: 100%;
+}
+
+.zero {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 690px;
+    left: 658px;
+    font-size: 35px;
+    border: solid;
+}
+
+.zero:hover {
+    background-color: #ccc;
+}
+
+.one {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 599px;
+    left: 567px;   
+    font-size: 35px;
+    border: solid;
+}
+
+.one:hover {
+    background-color: #ccc;
+}
+
+.two {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 599px;
+    left: 658px;
+    font-size: 35px;
+    border: solid;
+}
+
+.two:hover {
+    background-color: #ccc;
+}
+
+.three {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 599px;
+    left: 749px;
+    font-size: 35px;
+    border: solid;
+}
+
+.three:hover {
+    background-color: #ccc;
+}
+
+.four {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 508px;
+    left: 567px;
+    font-size: 35px;
+    border: solid;
+}
+
+.four:hover {
+    background-color: #ccc;
+}
+
+.five {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 508px;
+    left: 658px;
+    font-size: 35px;
+    border: solid;
+}
+
+.five:hover {
+    background-color: #ccc;
+}
+
+.six {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 508px;
+    left: 749px;
+    font-size: 35px;
+    border: solid;
+}
+
+.six:hover {
+    background-color: #ccc;
+}
+
+.seven {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 417px;
+    left: 567px;
+    font-size: 35px;
+    border: solid;
+}
+
+.seven:hover {
+    background-color: #ccc;
+}
+
+.eight {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 417px;
+    left: 658px;
+    font-size: 35px;
+    border: solid;
+}
+
+.eight:hover {
+    background-color: #ccc;
+}
+
+.nine {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 417px;
+    left: 749px;
+    font-size: 35px;
+    border: solid;
+}
+
+.nine:hover {
+    background-color: #ccc;
+}
+
+.plus {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 599px;
+    left: 840px;
+    font-size: 35px;
+    border: solid;
+}
+
+.plus:hover {
+    background-color: #ccc;
+}
+
+.minus {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 508px;
+    left: 840px;
+    font-size: 35px;
+    border: solid;
+}
+
+.minus:hover {
+    background-color: #ccc;
+}
+
+.mult {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 417px;
+    left: 840px;
+    font-size: 35px;
+    border: solid;
+}
+
+.mult:hover {
+    background-color: #ccc;
+}
+
+.div {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 326px;
+    left: 840px;
+    font-size: 35px;
+    border: solid;
+}
+
+.div:hover {
+    background-color: #ccc;
+}
+
+.equals {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 690px;
+    left: 840px;
+    font-size: 35px;
+    border: solid;
+}
+
+.equals:hover {
+    background-color: #ccc;
+}
+
+.clear {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 235px;
+    left: 567px;
+    font-size: 35px;
+    border: solid;
+}
+
+.clear:hover {
+    background-color: #ccc;
+}
+
+.decimal {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 690px;
+    left: 749px;
+    font-size: 35px;
+    border: solid;
+}
+
+.decimal:hover {
+    background-color: #ccc;
+}
+
+.negative {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 690px;
+    left: 567px;
+    font-size: 35px;
+    border: solid;
+}
+
+.negative:hover {
+    background-color: #ccc;
+}
+
+.exponent {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 326px;
+    left: 749px;
+    font-size: 35px;
+    border: solid;
+}
+
+.exponent:hover {
+    background-color: #ccc;
+}
+
+.backspace {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 235px;
+    left: 840px;
+    font-size: 35px;
+    border: solid;
+}
+
+.backspace:hover {
+    background-color: #ccc;
+}
+
+.pi {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 235px;
+    left: 658px;
+    font-size: 35px;
+    border: solid;
+}
+
+.pi:hover {
+    background-color: #ccc;
+}
+
+.leftp {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 326px;
+    left: 567px;
+    font-size: 35px;
+    border: solid;
+}
+
+.leftp:hover {
+    background-color: #ccc;
+}
+
+.rightp {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 326px;
+    left: 658px;
+    font-size: 35px;
+    border: solid;
+}
+
+.rightp:hover {
+    background-color: #ccc;
+}
+
+.percent {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 235px;
+    left: 749px;
+    font-size: 35px;
+    border: solid;
+}
+
+.percent:hover {
+    background-color: #ccc;
+}
+
+.buttons {
+    height: 625px;
+    width: 359px;
+    border: solid;
+    position: absolute;
+    top: 150px;
+    left: 567px;
+    z-index: -1;
+}
+
+.top {
+    height: 50px;
+    width: 359px;
+    border: solid;
+    position: absolute;
+    top: 100px;
+    left: 567px;
+    background-color: black;
+}
+
+.output {
+    font-size: 40px;
+    position: absolute;
+    top: 130px;
+    left: 575px;
+}
