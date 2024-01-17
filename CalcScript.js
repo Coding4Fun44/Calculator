@@ -414,7 +414,10 @@ function outputpercent() {
     }
     total3 = eval(total2);
     total3 = total3 / 100;
+    document.getElementById("output").innerHTML = total3.toString();
+    if ((total3.toString()).includes('.')) {
+        d.push('d');
+    }
+    total1 = total3.toString();
     total2 = total3.toString();
-    total1 = total2;
-    document.getElementById("output").innerHTML = total1;
 }
