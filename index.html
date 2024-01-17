@@ -7,62 +7,35 @@
         <title>Calculator</title>
     </head>
     <body>
+        <div class="calc">
         <script src="CalcScript.js"></script>
-        <div class="zero">
-        <button onclick="output0()">0</button>
-        </div>
-        <div class="one">
-        <button onclick="output1()">1</button>
-        </div>
-        <div class="two">
-        <button onclick="output2()">2</button>
-        </div>
-        <div class="three">
-        <button onclick="output3()">3</button>
-        </div>
-        <div class="four">
-         <button onclick="output4()">4</button>
-        </div>
-        <div class="five">
-        <button onclick="output5()">5</button>
-        </div>
-        <div class="six">
-        <button onclick="output6()">6</button>
-        </div>
-        <div class="seven">
-        <button onclick="output7()">7</button>
-        </div>
-        <div class="eight">
-        <button onclick="output8()">8</button>
-        </div>
-        <div class="nine">
-        <button onclick="output9()">9</button>
-        </div>
-        <div class="plus">
-            <button onclick="outputplus()">+</button>
-        </div>
-        <div class="minus">
-        <button onclick="outputminus()">-</button>
-        </div>
-        <div class="mult">
-            <button onclick="outputmult()">×</button>
-        </div>
-        <div class="div">
-            <button onclick="outputdiv()">÷</button>
-        </div>
-        <div class="equals">
-            <button onclick="outputequals()">=</button>
-        </div>
-            
-            
-            <p id="output">0</p>
-    
-
-
-
-
-
-
-
+        <button class="zero" onclick="output('0')">0</button>
+        <button class="one" onclick="output('1')">1</button>
+        <button class="two" onclick="output('2')">2</button>
+        <button class="three" onclick="output('3')">3</button>
+        <button class="four" onclick="output('4')">4</button>
+        <button class="five" onclick="output('5')">5</button>
+        <button class="six" onclick="output('6')">6</button>
+        <button class="seven" onclick="output('7')">7</button>
+        <button class="eight" onclick="output('8')">8</button>
+        <button class="nine" onclick="output('9')">9</button>
+        <button class="plus" onclick="outputplus()">+</button>
+        <button class="minus" onclick="outputminus()">-</button>
+        <button class="mult" onclick="outputmult()">×</button>
+        <button class="div" onclick="outputdiv()">÷</button>
+        <button class="equals" onclick="outputequals()">=</button>
+        <button class="clear" onclick="outputclear()">CE</button>
+        <button class="decimal" onclick="outputdecimal()">.</button>
+        <button class="negative" onclick="outputnegative()">+/-</button>
+        <button class="exponent" onclick="outputexponent()">^</button>
+        <button class="backspace" onclick="outputbackspace()">⌫</button>
+        <button class="pi" onclick="outputpi()">π</button>
+        <button class="leftp" onclick="outputleftp()">(</button>
+        <button class="rightp" onclick="outputrightp()">)</button>
+        <button class="percent" onclick="outputpercent()">%</button>
+    </div>  
+            <p class="output" id="output">0</p>
+            <div class="buttons"></div>
+            <div class="top"></div>
     </body>
 </html>
