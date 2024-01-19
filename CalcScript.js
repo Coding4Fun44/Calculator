@@ -22,7 +22,7 @@ function output(a) {
         document.getElementById("output").innerHTML = total1;
     }
     else {
-        total1 = total1 + a; 
+        total1 = total1 + a;
         total2 = total2 + a;     
         document.getElementById("output").innerHTML = total1;
         }
