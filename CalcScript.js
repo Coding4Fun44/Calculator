@@ -255,12 +255,18 @@ else if (total1 != '0' && total1.length > 1) {
         total2 = total2.substring(0, total2.length-2);
         document.getElementById("output").innerHTML = total1;
     }
-    else if (total2.substring(total2.length - 1, total2.length) === '-') {
+    else if (total1.substring(total2.length - 1, total1.length) === '-') {   
         n = [];
         total1 = total1.substring(0, total1.length-1);
         total2 = total2.substring(0, total2.length-1);
         document.getElementById("output").innerHTML = total1;
     }
+    if (total1.substring(total1.length - 1, total1.length) === '-' && total2.substring(total2.length - 1, total2.length) === '+') {
+        n = [];
+        total1 = total1.substring(0, total1.length-1);
+        total2 = total2.substring(0, total2.length-1) + '-';
+        document.getElementById("output").innerHTML = total1;
+        }
     else {
     total1 = total1.substring(0, total1.length-1);
     total2 = total2.substring(0, total2.length-1);
@@ -306,7 +312,7 @@ if (total1.substring(total1.length-1, total1.length) != '.') {
         document.getElementById("output").innerHTML = total1;
     }
     else if (n[0] === 'n') {
-        if (total1 === '-'){
+        if (total1 === '-') {
             total1 = '0';
             total2 = '0';
             document.getElementById("output").innerHTML = total1;
@@ -319,6 +325,12 @@ if (total1.substring(total1.length-1, total1.length) != '.') {
             document.getElementById("output").innerHTML = total1;
             n.pop();
             }
+            else if (total2.substring(total2.length-1, total2.length) === '+') {
+                total1 = total1.substring(0, total1.length-1);
+                total2 = total2.substring(0, total2.length-1) + '-';
+                document.getElementById("output").innerHTML = total1;
+                n.pop();
+            }
             else {
                 total1 = total1.substring(0, total1.length-1);
                 total2 = total2.substring(0, total2.length-1);
@@ -328,13 +340,19 @@ if (total1.substring(total1.length-1, total1.length) != '.') {
         }
     }
     else if ((total1.substring(total1.length-1, total1.length) === '0') || (total1.substring(total1.length-1, total1.length) === '1') || (total1.substring(total1.length-1, total1.length) === '2') || (total1.substring(total1.length-1, total1.length) === '3') || (total1.substring(total1.length-1, total1.length) === '4') || (total1.substring(total1.length-1, total1.length) === '5') || (total1.substring(total1.length-1, total1.length) === '6') || (total1.substring(total1.length-1, total1.length) === '7') || (total1.substring(total1.length-1, total1.length) === '8') || (total1.substring(total1.length-1, total1.length) === '9')) {
-        n.push('n')
+        n.push('n');
         total1 = total1 + '-';
         total2 = total2 + '*-'; 
         document.getElementById("output").innerHTML = total1;
     }
+    else if (total1.substring(total1.length-1, total1.length) === '–') {
+        n.push('n');
+        total1 =  total1 + '-';
+        total2 = total2.substring(total2.length-2, total2.length-1) + '+'; 
+        document.getElementById("output").innerHTML = total1;
+    }
     else {
-        n.push('n')
+        n.push('n');
         total1 = total1 + '-';
         total2 = total2 + '-'; 
         document.getElementById("output").innerHTML = total1;
